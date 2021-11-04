@@ -6,15 +6,16 @@ public class CameraRotate : MonoBehaviour
 {
     float rx;
     float ry;
-    public float rotSpeed = 200;
+    float xrotSpeed = 50;
+    float yrotSpeed = 200;
 
     void FixedUpdate()
     {
         float mx = Input.GetAxis("Mouse X");
         float my = Input.GetAxis("Mouse Y"); 
 
-        rx += rotSpeed * my * Time.deltaTime;
-        ry += rotSpeed * mx * Time.deltaTime;
+        rx += xrotSpeed * my * Time.deltaTime;
+        ry += yrotSpeed * mx * Time.deltaTime;
 
         
         rx = Mathf.Clamp(rx, -80, 80);

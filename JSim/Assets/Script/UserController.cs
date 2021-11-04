@@ -36,12 +36,26 @@ public class UserController : MonoBehaviour
 
     void Rotate()
     {
-        if(Input.GetKey("a"))
+        if(Input.GetKey("a") && Input.GetKey("w"))
         {
             this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);
         }
 
-        if (Input.GetKey("d"))
+        if (Input.GetKey("a") && Input.GetKey("s"))
+        {
+            this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);
+        }
+
+
+
+
+
+        if (Input.GetKey("d") && Input.GetKey("w"))
+        {
+            this.transform.Rotate(Vector3.up, Time.deltaTime * r_speed);
+        }
+
+        if (Input.GetKey("d") && Input.GetKey("s"))
         {
             this.transform.Rotate(Vector3.up, Time.deltaTime * r_speed);
         }
