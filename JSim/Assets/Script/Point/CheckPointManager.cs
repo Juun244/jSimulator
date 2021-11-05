@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CheckPointManager : MonoBehaviour
 {
+
     public GameObject point0;
     public GameObject point1;
     public GameObject point2;
@@ -22,12 +23,15 @@ public class CheckPointManager : MonoBehaviour
     {
         PointSerial();
 
-        Debug.Log(progress);
+        //Debug.Log(progress);
     }
 
     void PointSerial()
     {
-        if (progress == 1)
+        if (progress == 0)
+            point0.SetActive(true);
+
+        else if (progress == 1)
             point1.SetActive(true);
 
         else if (progress == 2)
@@ -37,9 +41,7 @@ public class CheckPointManager : MonoBehaviour
             point3.SetActive(true);
 
         else if (progress == 4)
-        {
             point4.SetActive(true);
-        }
             
     }
 }

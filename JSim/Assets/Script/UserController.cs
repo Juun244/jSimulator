@@ -10,7 +10,7 @@ public class UserController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        Rotate();
+        Handle();
     }
 
     void Move()
@@ -23,7 +23,7 @@ public class UserController : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + _velocity * Time.deltaTime);
     }
 
-    void Rotate()
+    void Handle()
     {
         if(Input.GetKey("a") && Input.GetKey("w"))
             this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);

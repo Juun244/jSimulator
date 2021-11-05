@@ -6,7 +6,7 @@ public class CameraRotate : MonoBehaviour
 {
     float rx;
     float ry;
-    float xrotSpeed = 50;
+    float xrotSpeed = 100;
     float yrotSpeed = 200;
 
     void FixedUpdate()

@@ -5,35 +5,17 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    /*
-    private static UiManager instance = null;
+  
+    //name
+    public Text text_Name;
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(this.gameObject);
-        }
-
-        else
-        {
-            if (instance != this)
-                Destroy(this.gameObject);
-        }
-    }
-    */
-
-
-
-    public Text text_Timer;
-    public float time;
-    //////////////////////////
+    //check point
     public GameObject Point;
     public Text text_Point;
-    //////////////////////////
-    public Text text_Name;
+
+    //time
+    public Text text_Timer;
+    public float time;
 
 
     void Update()
@@ -52,13 +34,13 @@ public class UiManager : MonoBehaviour
     void CheckPoint()
     {
         text_Point.text =
-            Point.GetComponent<CheckPointManager>().progress.ToString() + "/ 5";
+            this.gameObject.GetComponent<CheckPointManager>().progress.ToString() + "/ 5";
     }
 
 
     void Name()
     {
-        text_Name.text = "Name";
+        text_Name.text = this.gameObject.GetComponent<GameManager>().NameText.text;
     }
 
 }

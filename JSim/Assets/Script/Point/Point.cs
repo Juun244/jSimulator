@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    GameObject pManager;
+    GameObject gameManager;
 
     void Start()
     {
-        pManager = GameObject.Find("Points");
+        gameManager = GameObject.Find("GameManager");
     }
 
     void OnCollisionEnter(Collision colliderP)
     {
-        pManager.GetComponent<CheckPointManager>().progress++;
+        gameManager.GetComponent<CheckPointManager>().progress++;
         this.gameObject.SetActive(false);
     }
 }
