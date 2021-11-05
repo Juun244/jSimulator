@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject Canvas2;
     public GameObject Canvas3;
 
-
+    public InputField lname;
     public Text NameText;
 
     private static GameManager instance = null;
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
             Canvas3.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.Return))
-                state = 1;  //주행
+                state = 1;  //이름 입력
         }
 
         else if(state == 1) //이름 입력
@@ -157,15 +157,17 @@ public class GameManager : MonoBehaviour
             Canvas2.SetActive(false);
             Canvas3.SetActive(false);
 
-            if (this.gameObject.GetComponent<CheckPointManager>().progress == 1)    //채크포인트 도달시
+            if (this.gameObject.GetComponent<CheckPointManager>().progress == 5)    //체크포인트 도달시
             {
                 AddRecord();
                 state = 0;  //랭킹 출력
 
                 car.transform.position = carT;
+                car.transform.rotation = Quaternion.Euler(0, 90, 0);
                 this.gameObject.GetComponent<CheckPointManager>().progress = 0;
                 this.gameObject.GetComponent<UiManager>().time = 0;
-                NameText.text = null;
+                lname.text = "";
+                NameText.text = "";
             }
         }
     }
