@@ -132,7 +132,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637551413290000000
       documentationUrl: 
@@ -239,7 +239,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637334461080000000
       documentationUrl: 
@@ -326,7 +326,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637580705480000000
       documentationUrl: 
@@ -397,7 +397,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637394922300000000
       documentationUrl: 
@@ -491,7 +491,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637647922650000000
       documentationUrl: 
@@ -653,7 +653,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637547111200000000
       documentationUrl: 
@@ -751,6 +751,7 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.7.0-pre.1
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -774,6 +775,7 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.7.0-pre.1
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -809,7 +811,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637557616100000000
       documentationUrl: 
@@ -872,7 +874,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -920,7 +922,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -968,7 +970,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1016,7 +1018,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1064,7 +1066,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1112,7 +1114,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1164,7 +1166,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1220,7 +1222,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1269,7 +1271,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1317,7 +1319,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1365,7 +1367,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1413,7 +1415,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1461,7 +1463,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1509,7 +1511,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1561,7 +1563,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1609,7 +1611,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1665,7 +1667,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1717,7 +1719,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1765,7 +1767,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1829,7 +1831,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1877,7 +1879,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1933,7 +1935,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -1981,7 +1983,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2037,7 +2039,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2093,7 +2095,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2149,7 +2151,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2221,7 +2223,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2273,7 +2275,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2333,7 +2335,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2395,7 +2397,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2443,7 +2445,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2503,7 +2505,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2555,7 +2557,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2614,7 +2616,7 @@ m_PackageAssets:
       hasRegistry: 0
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 0
       documentationUrl: 
@@ -2675,7 +2677,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637429759280000000
       documentationUrl: 
@@ -2749,7 +2751,7 @@ m_PackageAssets:
       hasRegistry: 1
       hideInEditor: 1
       entitlements:
-        isAllowed: 1
+        isAllowed: 0
       isAssetStorePackage: 0
       datePublishedTicks: 637237898320000000
       documentationUrl: 

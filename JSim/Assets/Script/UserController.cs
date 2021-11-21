@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UserController : MonoBehaviour
 {
-    public float speed = 15;
+    public float speed = 30;
     public float r_speed = 80;
  
     void FixedUpdate()
