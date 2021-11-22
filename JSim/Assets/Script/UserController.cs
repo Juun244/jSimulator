@@ -6,7 +6,14 @@ public class UserController : MonoBehaviour
 {
     public float speed = 30;
     public float r_speed = 80;
- 
+
+    public bool gearState = true;
+    
+
+    void Update() 
+    {
+        Gear();
+    }
     void FixedUpdate()
     {
         Move();
@@ -15,27 +22,50 @@ public class UserController : MonoBehaviour
 
     void Move()
     {
-        float _moveDirZ = Input.GetAxisRaw("Vertical");
-        Vector3 _moveVertical = transform.forward * _moveDirZ;
+        
+        Vector3 _moveVertical0 = transform.forward * 1;
+        Vector3 _moveVertical1 = transform.forward * -1;
 
-        Vector3 _velocity = (_moveVertical).normalized * speed;
+        Vector3 _velocity0 = (_moveVertical0).normalized * speed;
+        Vector3 _velocity1 = (_moveVertical1).normalized * speed;
 
-        this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + _velocity * Time.deltaTime);
+        if(gearState == true && Input.GetKey("w"))
+            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + _velocity0 * Time.deltaTime);
+
+        else if(gearState == false && Input.GetKey("w"))
+            this.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + _velocity1 * Time.deltaTime);
     }
 
     void Handle()
     {
-        if(Input.GetKey("a") && Input.GetKey("w"))
+        if(gearState == true)
+        {
+            if(Input.GetKey("a") && Input.GetKey("w"))
             this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);
-
-        if (Input.GetKey("d") && Input.GetKey("s"))
-            this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);
-
 
         if (Input.GetKey("d") && Input.GetKey("w"))
             this.transform.Rotate(Vector3.up, Time.deltaTime * r_speed);
+        }
 
-        if (Input.GetKey("a") && Input.GetKey("s"))
+        else if(gearState == false)
+        {
+            if (Input.GetKey("d") && Input.GetKey("w"))
+            this.transform.Rotate(Vector3.down, Time.deltaTime * r_speed);
+
+        if (Input.GetKey("a") && Input.GetKey("w"))
             this.transform.Rotate(Vector3.up, Time.deltaTime * r_speed);
+        }
+    }
+
+    void Gear() // true = D false = R
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(gearState == true)
+                gearState = false;
+
+            else if(gearState ==false)
+                gearState = true;
+        }
     }
 }

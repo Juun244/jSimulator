@@ -3,35 +3,69 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+
+using System.IO;
+using System.Runtime.Serialization; 
+using System.Runtime.Serialization.Formatters.Binary;
+
+
+
 
 public class GameManager : MonoBehaviour
 {
     public GameObject car;
     public Vector3 carT;
 
-
-    public GameObject Canvas1;
-    public GameObject Canvas2;
-    public GameObject Canvas3;
+    public GameObject Canvas0; //main
+    public GameObject Canvas1;//rank
+    public GameObject Canvas2;//id input
+    public GameObject Canvas3;//main ui
+    public GameObject Canvas4;//last record
 
     public InputField lname;
     public Text NameText;
 
-    private static GameManager instance = null;
 
-    int state = 1;
+    public Text rName;
+    public Text rRecord;
+
+    public int state = 0;
 
     ///////////////////////////////////////////////////////////////
 
-    private struct Record
+
+    [Serializable]
+    public class Record
     {
         public string name;
         public float _time;
     }
 
-    private List<Record> Records = new List<Record>();
+    private List<Record> Records = new List<Record>
+            {
+            new Record {name = "No_Data",_time = 1000},
+            new Record {name = "No_Data",_time = 1000},
+            new Record {name = "No_Data",_time = 1000},
+            new Record {name = "No_Data",_time = 1000},
+            new Record {name = "No_Data",_time = 1000}
+                };
 
-    private void AddRecord()    //¡÷«‡¡ﬂ ¡§∫∏∑Œ ∏ÆΩ∫∆Æ √ﬂ∞°
+    void SaveRecord() 
+    {
+        var binaryFormatter     = new BinaryFormatter();
+        var memoryStream        = new MemoryStream();
+
+        //Records trans byte arr    and save
+        binaryFormatter.Serialize(memoryStream, Records);
+
+        // Î¨∏ÏûêÏó¥ Í∞íÏúºÎ°ú Î≥ÄÌôò, 'Rank' string keyÍ∞íÏúºÎ°ú PlayerPrefsÏóê Ï†ÄÏû•.
+        PlayerPrefs.SetString("Rank", Convert.ToBase64String(memoryStream.GetBuffer()));
+    }
+
+
+
+    private void AddRecord()    //Îû≠ÌÇπ Ï∂îÍ∞Ä.
     {
         Record addRecord = new Record();
 
@@ -43,7 +77,7 @@ public class GameManager : MonoBehaviour
         PrintRanking();
     }
 
-    private void SortList() //∏ÆΩ∫∆Æ ¿¸√º Ω√∞£º¯¿∏∑Œ ¡§∑ƒ
+    private void SortList() //Î¶¨Ïä§Ìä∏ Ï†ïÎ†¨
     {
         for (int i = 0; i < Records.Count; i++)
         {
@@ -58,6 +92,8 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
 
     public Text n1;
     public Text t1;
@@ -74,7 +110,7 @@ public class GameManager : MonoBehaviour
     public Text n5;
     public Text t5;
 
-    private void PrintRanking() //¡§∑ƒ»ƒ ªÛ¿ß5µÓ±Ó¡ˆ
+    private void PrintRanking()
     {
         n1.text = Records[0].name;
         t1.text = Records[0]._time.ToString();
@@ -97,18 +133,22 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        var data = PlayerPrefs.GetString("Rank");
+
+        if(!string.IsNullOrEmpty(data))
+        {
+            var binaryFormatter = new BinaryFormatter();
+            var memoryStream    = new MemoryStream(Convert.FromBase64String(data));
+
+            //Í∞ÄÏ†∏Ïò® Îç∞Ïù¥ÌÑ∞Î•º Î∞îÏù¥Ìä∏ Î∞∞Ïó¥Î°ú Î≥ÄÌôò
+            //ÏÇ¨Ïö©ÌïòÍ∏∞ ÏúÑÌï¥ Îã§Ïãú Î¶¨Ïä§Ìä∏Î°ú Ï∫êÏä§ÌåÖ.
+            Records             = (List<Record>)binaryFormatter.Deserialize(memoryStream);
+        }
+
+
         carT = car.transform.position;
 
-        Records = new List<Record>
-            {
-            new Record {name = "AAA",_time = 999},
-            new Record {name = "AAA",_time = 999},
-            new Record {name = "AAA",_time = 999},
-            new Record {name = "AAA",_time = 999},
-            new Record {name = "AAA",_time = 999}
-                };
-
-
+        SortList();
         PrintRanking();
     }
 
@@ -124,43 +164,99 @@ public class GameManager : MonoBehaviour
 
     void P_Manage()
     {
-        if(state == 0)  //∑©≈∑ √‚∑¬
+        if(state == 0)              //Îû≠ÌÇπ
         {
             Time.timeScale = 0;
 
+            Canvas0.SetActive(true);
+            Canvas1.SetActive(false);
+            Canvas2.SetActive(false);
+            Canvas3.SetActive(false);
+            Canvas4.SetActive(false);
+
+            
+            if (Input.GetKeyDown(KeyCode.Return))
+                state = 1; 
+        }
+
+        if(state == 1)              //Îû≠ÌÇπ
+        {
+            Time.timeScale = 0;
+
+            Canvas0.SetActive(false);
             Canvas1.SetActive(false);
             Canvas2.SetActive(false);
             Canvas3.SetActive(true);
+            Canvas4.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.Return))
-                state = 1;  //¿Ã∏ß ¿‘∑¬
+                state = 2; 
         }
 
-        else if(state == 1) //¿Ã∏ß ¿‘∑¬
+        else if(state == 2)         //Ïù¥Î¶Ñ ÏûÖÎ†•
         {
             Time.timeScale = 0;
 
+            Canvas0.SetActive(false);
             Canvas1.SetActive(false);
             Canvas2.SetActive(true);
             Canvas3.SetActive(false);
+            Canvas4.SetActive(false);
 
-            if (Input.GetKeyDown(KeyCode.Return))
-                state = 2;  //¡÷«‡
+            if (Input.GetKeyDown(KeyCode.Return) && lname.text != "")
+                state = 3;  
                 
         }
 
-        else if (state == 2) //¡÷«‡
+        else if (state == 3)        //Ï£ºÌñâ
         {
             Time.timeScale = 1;
 
+            Canvas0.SetActive(false);
             Canvas1.SetActive(true);
             Canvas2.SetActive(false);
             Canvas3.SetActive(false);
+            Canvas4.SetActive(false);
 
-            if (this.gameObject.GetComponent<CheckPointManager>().progress == 5)    //√º≈©∆˜¿Œ∆Æ µµ¥ﬁΩ√
+            if (this.gameObject.GetComponent<CheckPointManager>().progress == 5)    //Îã§ ÌÜµÍ≥º
+            {
+                state = 4;      //last record
+            }
+
+            
+            if(this.gameObject.GetComponent<UiManager>().time > 300)
+            {
+                state = 1;
+
+                car.transform.position = carT;
+                car.transform.rotation = Quaternion.Euler(0, 90, 0);
+                this.gameObject.GetComponent<CheckPointManager>().progress = 0;
+                this.gameObject.GetComponent<UiManager>().time = 0;
+                lname.text = "";
+                NameText.text = "";
+            }
+        }
+
+
+        else if(state == 4)         //last record
+        {
+            Time.timeScale = 0;
+
+            Canvas0.SetActive(false);
+            Canvas1.SetActive(false);
+            Canvas2.SetActive(false);
+            Canvas3.SetActive(false);
+            Canvas4.SetActive(true);
+
+            rName.text = NameText.text;
+            rRecord.text = this.gameObject.GetComponent<UiManager>().time.ToString("N2");
+
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 AddRecord();
-                state = 0;  //∑©≈∑ √‚∑¬
+                SaveRecord();
+
+                state = 1;  //rank
 
                 car.transform.position = carT;
                 car.transform.rotation = Quaternion.Euler(0, 90, 0);

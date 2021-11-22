@@ -18,11 +18,16 @@ public class UiManager : MonoBehaviour
     public float time;
 
 
+    public GameObject user;
+    public Text text_Gear;
+
+
     void Update()
     {
         Name();
         Timer();
         CheckPoint();
+        GearT();
     }
 
     void Timer()
@@ -41,6 +46,15 @@ public class UiManager : MonoBehaviour
     void Name()
     {
         text_Name.text = this.gameObject.GetComponent<GameManager>().NameText.text;
+    }
+
+    void GearT()
+    {
+        if(user.GetComponent<UserController>().gearState == true)
+            text_Gear.text = "D";
+
+        else
+            text_Gear.text = "R";
     }
 
 }
