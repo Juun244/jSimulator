@@ -133,6 +133,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        isCol = false;
+
         var data = PlayerPrefs.GetString("Rank");
 
         if(!string.IsNullOrEmpty(data))
@@ -162,6 +164,9 @@ public class GameManager : MonoBehaviour
         P_Manage();
     }
 
+
+    public bool isCol = false;
+
     void P_Manage()
     {
         if(state == 0)              //랭킹
@@ -177,6 +182,11 @@ public class GameManager : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Return))
                 state = 1; 
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
 
         if(state == 1)              //랭킹
@@ -188,6 +198,13 @@ public class GameManager : MonoBehaviour
             Canvas2.SetActive(false);
             Canvas3.SetActive(true);
             Canvas4.SetActive(false);
+
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                state = 0;
+            }
+
 
             if (Input.GetKeyDown(KeyCode.Return))
                 state = 2; 
@@ -203,6 +220,11 @@ public class GameManager : MonoBehaviour
             Canvas3.SetActive(false);
             Canvas4.SetActive(false);
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                state = 0;
+            }
+
             if (Input.GetKeyDown(KeyCode.Return) && lname.text != "")
                 state = 3;  
                 
@@ -217,6 +239,7 @@ public class GameManager : MonoBehaviour
             Canvas2.SetActive(false);
             Canvas3.SetActive(false);
             Canvas4.SetActive(false);
+            car.GetComponent<UserController>().gearState = true;
 
             if (this.gameObject.GetComponent<CheckPointManager>().progress == 5)    //다 통과
             {
@@ -224,9 +247,9 @@ public class GameManager : MonoBehaviour
             }
 
             
-            if(this.gameObject.GetComponent<UiManager>().time > 300)
+            if(this.gameObject.GetComponent<UiManager>().time > 180)
             {
-                state = 1;
+                state = 0;
 
                 car.transform.position = carT;
                 car.transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -235,6 +258,34 @@ public class GameManager : MonoBehaviour
                 lname.text = "";
                 NameText.text = "";
             }
+
+            if( isCol == true )
+            {
+                state = 0;
+
+                car.transform.position = carT;
+                car.transform.rotation = Quaternion.Euler(0, 90, 0);
+                this.gameObject.GetComponent<CheckPointManager>().progress = 0;
+                this.gameObject.GetComponent<UiManager>().time = 0;
+                lname.text = "";
+                NameText.text = "";
+
+                isCol = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                car.transform.position = carT;
+                car.transform.rotation = Quaternion.Euler(0, 90, 0);
+                this.gameObject.GetComponent<CheckPointManager>().progress = 0;
+                this.gameObject.GetComponent<UiManager>().time = 0;
+                lname.text = "";
+                NameText.text = "";
+
+                state = 0;
+            }
+
+            
         }
 
 

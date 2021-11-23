@@ -13,10 +13,15 @@ public class Plane : MonoBehaviour
 
     void OnCollisionEnter(Collision colliderP)
     {
+        /*
         gameManager.GetComponent<GameManager>().car.transform.position
             = gameManager.GetComponent<GameManager>().carT;
 
         gameManager.GetComponent<GameManager>().car.transform.rotation
             = Quaternion.Euler(0, 90, 0);
+        */
+
+        //Debug.Log("is col!!");
+        gameManager.GetComponent<GameManager>().isCol = true;
     }
 }

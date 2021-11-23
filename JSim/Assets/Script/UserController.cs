@@ -10,9 +10,16 @@ public class UserController : MonoBehaviour
     public bool gearState = true;
     
 
+    void Awake() 
+    {
+        gearState = true;
+    }
+
     void Update() 
     {
         Gear();
+
+        Debug.Log(gearState);
     }
     void FixedUpdate()
     {
