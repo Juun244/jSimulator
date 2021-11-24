@@ -17,9 +17,9 @@ public class UserController : MonoBehaviour
 
     void Update() 
     {
-        Gear();
+        //Gear();
 
-        Debug.Log(gearState);
+        //Debug.Log(gearState);
     }
     void FixedUpdate()
     {
@@ -64,7 +64,7 @@ public class UserController : MonoBehaviour
         }
     }
 
-    void Gear() // true = D false = R
+    public void Gear() // true = D false = R
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {

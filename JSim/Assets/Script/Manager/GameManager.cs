@@ -239,7 +239,8 @@ public class GameManager : MonoBehaviour
             Canvas2.SetActive(false);
             Canvas3.SetActive(false);
             Canvas4.SetActive(false);
-            car.GetComponent<UserController>().gearState = true;
+            
+            car.GetComponent<UserController>().Gear();
 
             if (this.gameObject.GetComponent<CheckPointManager>().progress == 5)    //다 통과
             {
