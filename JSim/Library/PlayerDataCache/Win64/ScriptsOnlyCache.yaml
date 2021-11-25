@@ -597,4 +597,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Driving.unity
-  playerPath: C:/Users/sih65/Desktop/simulation/New Unity Project.exe
+  playerPath: C:/Users/MIT-09/Desktop/JS/Jsimulator.exe
