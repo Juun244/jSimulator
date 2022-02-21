@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Driving.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Ranking Scene.unity
     guid: 0be6596c24f422f449caf37bcf6cdb01
+  - enabled: 1
+    path: Assets/Scenes/Driving Scene.unity
+    guid: 514533a607170f647b6c99f8bd45cbb5
   m_configObjects: {}
