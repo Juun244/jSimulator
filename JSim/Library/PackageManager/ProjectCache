@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637780762375987590
-    m_Hash: 1801632052
+      ticks: 637811336469392300
+    m_Hash: 3554385736
   m_LockFileStatus:
     m_FilePath: C:/Users/82103/Documents/GitHub/jSimulator/JSim/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637780762537517188
-    m_Hash: 3641642830
+      ticks: 637811336469392300
+    m_Hash: 2623524056
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -75,11 +75,13 @@ m_PackageAssets:
         - 1.14.7
         - 1.14.9
         - 1.14.12
+        - 1.14.13
         - 1.15.1
         - 1.15.4
         - 1.15.7
         - 1.15.9
         - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -101,11 +103,13 @@ m_PackageAssets:
         - 1.14.7
         - 1.14.9
         - 1.14.12
+        - 1.14.13
         - 1.15.1
         - 1.15.4
         - 1.15.7
         - 1.15.9
         - 1.15.12
+        - 1.15.13
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15

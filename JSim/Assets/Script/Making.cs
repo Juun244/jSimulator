@@ -27,6 +27,7 @@ public class Making : MonoBehaviour
             if (random == 0)
             {
                 newobstacle.transform.position = new Vector3(transform.position.x + 5, SpawnPoint.position.y, SpawnPoint.position.z);
+                newobstacle.transform.rotation = Quaternion.Euler(0, 270, 0);
             }
             if (random == 1)
             {
