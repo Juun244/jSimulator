@@ -27,17 +27,13 @@ public class UserController : MonoBehaviour
     {
         if (curtime <= 0)
         {
-            if (Input.GetKey(KeyCode.LeftArrow)&&transform.position.x>-5)
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                Vector3 target = new Vector3(transform.position.x-10f, transform.position.y, transform.position.z);
-                transform.position = Vector3.Slerp(transform.position, target , speed);
-                curtime = cooltime;
+                LeftMove();
             }
-            if (Input.GetKey(KeyCode.RightArrow)&&transform.position.x<5)
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                Vector3 target = new Vector3(transform.position.x+10f, transform.position.y, transform.position.z);
-                transform.position = Vector3.Slerp(transform.position, target, speed);
-                curtime = cooltime;
+                RightMove();
             }
         }
         curtime -= Time.deltaTime;
@@ -52,5 +48,36 @@ public class UserController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger");
+        if(other.gameObject.tag == "Item")
+        {
+            GameManager.instance.Score++;
+            //audio.Play();
+            other.gameObject.SetActive(false);
+            GameManager.instance.ScoreCount(GameManager.instance.Score);
+        }
+    }
+
+    public void LeftMove()
+    {
+        if(transform.position.x > -5)
+        {
+            Vector3 target = new Vector3(transform.position.x - 10f, transform.position.y, transform.position.z);
+            transform.position = Vector3.Slerp(transform.position, target, speed);
+            curtime = cooltime;
+        }
+    }
+
+    public void RightMove()
+    {
+        if (transform.position.x < 5)
+        {
+            Vector3 target = new Vector3(transform.position.x + 10f, transform.position.y, transform.position.z);
+            transform.position = Vector3.Slerp(transform.position, target, speed);
+            curtime = cooltime;
+        }
+    }
 
 }

@@ -60,6 +60,7 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Script\UserController.cs" />
     <Compile Include="Assets\Script\Move.cs" />
+    <Compile Include="Assets\Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
