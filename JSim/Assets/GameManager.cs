@@ -29,11 +29,11 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         instance = this;
         Menu();
         BestScore = PlayerPrefs.GetInt("BestScore");
-        ScoreText.text = "Score : " + Score;
-        BestScoreText.text = "Best Score : " + BestScore;
+        PrintScore();
     }
 
     public void Menu()
@@ -57,8 +57,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SetGameState(GameState.gameOver);
-        OverScore.text = "Score : " + Score;
-        OverBestScore.text = "Best Score : " + BestScore;
+        PrintScore();
         PlayerPrefs.SetInt("BestScore", BestScore);
         Time.timeScale = 0f;
         GameOver.SetActive(true);
@@ -83,12 +82,11 @@ public class GameManager : MonoBehaviour
 
     public void ScoreCount(int Score)
     {
-        ScoreText.text = "Score : " + Score;
         if (Score >= BestScore)
         {
             BestScore = Score;
-            BestScoreText.text = "Best Score : " + BestScore;
         }
+        PrintScore();
     }
 
     // Update is called once per frame
@@ -100,5 +98,13 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerPrefs.Save();
+    }
+
+    public void PrintScore()
+    {
+        ScoreText.text = "Score : " + Score;
+        BestScoreText.text = "Best Score : " + BestScore;
+        OverScore.text = "Score : " + Score;
+        OverBestScore.text = "Best Score : " + BestScore;
     }
 }
