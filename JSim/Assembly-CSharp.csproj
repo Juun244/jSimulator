@@ -57,10 +57,11 @@
     <Compile Include="Assets\Script\Point\CheckPointManager.cs" />
     <Compile Include="Assets\Script\Point\Point.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\UserController.cs" />
     <Compile Include="Assets\Script\Move.cs" />
-    <Compile Include="Assets\Item.cs" />
+    <Compile Include="Assets\Script\MountainMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

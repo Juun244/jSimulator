@@ -4,39 +4,40 @@ using UnityEngine;
 
 public class UserController : MonoBehaviour
 {
-    public float cooltime;
-    private float curtime;
     public float speed;
+    GameObject MainCamera;
 
 
     void Awake() 
     {
-
+        MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     void Update() 
     {
-        Move();
+        Control();
     }
     void FixedUpdate()
     {
          
     }
     
-    void Move()
+    void Control()
     {
-        if (curtime <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                LeftMove();
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                RightMove();
-            }
+            LeftMove();
         }
-        curtime -= Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RightMove();
+        }
+        /*
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            MoveCamera();
+        }
+        */
     }
 
     void OnCollisionEnter(Collision other)
@@ -64,9 +65,8 @@ public class UserController : MonoBehaviour
     {
         if(transform.position.x > -5)
         {
-            Vector3 target = new Vector3(transform.position.x - 10f, transform.position.y, transform.position.z);
+            Vector3 target = transform.position + new Vector3(-10, 0, 0);
             transform.position = Vector3.Slerp(transform.position, target, speed);
-            curtime = cooltime;
         }
     }
 
@@ -74,9 +74,24 @@ public class UserController : MonoBehaviour
     {
         if (transform.position.x < 5)
         {
-            Vector3 target = new Vector3(transform.position.x + 10f, transform.position.y, transform.position.z);
+            Vector3 target = transform.position + new Vector3(10, 0, 0);
             transform.position = Vector3.Slerp(transform.position, target, speed);
-            curtime = cooltime;
+        }
+    }
+
+    public void MoveCamera()
+    {
+        if(MainCamera.GetComponent<Camera>().Setvalue == 0)
+        {
+            MainCamera.GetComponent<Camera>().Setvalue = 1;
+        }
+        else if(MainCamera.GetComponent<Camera>().Setvalue == 1)
+        {
+            MainCamera.GetComponent<Camera>().Setvalue = 2;
+        }
+        else if(MainCamera.GetComponent<Camera>().Setvalue == 2)
+        {
+            MainCamera.GetComponent<Camera>().Setvalue = 0;
         }
     }
 
