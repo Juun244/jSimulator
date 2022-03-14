@@ -2537,8 +2537,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 119.5, y: 0}
-  m_SizeDelta: {x: 239, y: 269}
+  m_AnchoredPosition: {x: 131.41638, y: -38.305}
+  m_SizeDelta: {x: 540.7872, y: 709.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630901310
 MonoBehaviour:
@@ -3227,8 +3227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -99, y: 0}
-  m_SizeDelta: {x: 239, y: 269}
+  m_AnchoredPosition: {x: 26.8024, y: -38.3069}
+  m_SizeDelta: {x: 596.3796, y: 709.1898}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784130169
 MonoBehaviour:
@@ -3474,8 +3474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 10, y: 49}
-  m_SizeDelta: {x: 188.9603, y: 66.5815}
+  m_AnchoredPosition: {x: 0, y: 81}
+  m_SizeDelta: {x: 311.9113, y: 99.6364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889009119
 MonoBehaviour:
@@ -3546,7 +3546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7254902, b: 0.99629277, a: 0.54509807}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3728,7 +3728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &934244772
 Animator:
   serializedVersion: 3
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7254902, b: 0.99607843, a: 0.54509807}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5378,7 +5378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1405905165
 MonoBehaviour:
   m_ObjectHideFlags: 0
